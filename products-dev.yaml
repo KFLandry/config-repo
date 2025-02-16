@@ -19,7 +19,7 @@ spring:
 
   docker:
     compose:
-      file: ../compose.yaml
+      file: ./compose.yaml
   data:
     rest:
       base-path: /api/v1
