@@ -19,7 +19,7 @@ spring:
 
   docker:
     compose:
-      file: ./auth-users/compose.yaml
+      file: ../compose.yaml
 
 server:
   port: 8081
