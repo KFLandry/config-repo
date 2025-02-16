@@ -3,9 +3,9 @@ spring:
     name: auth-users
 
   datasource:
-    url: jdbc:mysql://localhost:3306/cyna_users
-    username: cyna_users_pwd
-    password: cyna_users_pwd
+    url: jdbc:mysql://localhost:3306/cyna_db
+    username: cyna_user
+    password: cyna_pwd
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

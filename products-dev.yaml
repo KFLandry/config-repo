@@ -3,9 +3,9 @@ spring:
     name: products
 
   datasource:
-    url: jdbc:mysql://localhost:3306/cyna_products
-    username: cyna_products_pwd
-    password: cyna_products_pwd
+    url: jdbc:mysql://localhost:3306/cyna_db
+    username: cyna_user
+    password: cyna_pwd
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
