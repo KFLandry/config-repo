@@ -25,7 +25,7 @@ spring:
       base-path: /api/v1
   web:
     resources:
-      static-locations: file:products/target/images
+      static-locations: file:/products/images
 
 server:
   port: 8082
@@ -37,7 +37,8 @@ logging:
     root: debug
     web: debug
   file:
-    name: /logs/cyna-products.log
+    name: cyna-products.log
+    path: /var/log
 
 eureka:
   client:
