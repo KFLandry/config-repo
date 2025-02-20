@@ -1,4 +1,1 @@
-spring:
-  cloud:
-    config:
-      uri: http://cyna-config-server:8888
+
