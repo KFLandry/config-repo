@@ -34,7 +34,7 @@ server:
 #Logging
 logging:
   level:
-    root: info
+    root: debug
     web: debug
   file:
     name: ./target/cyna-products.log
