@@ -60,4 +60,5 @@ logging:
     org.springframework.cloud.netflix: DEBUG
 
   file:
-    name: ./target/api-gateway.log
+    name: api-gateway.log
+    path: /var/log
