@@ -49,5 +49,5 @@ eureka:
     preferIpAddress: false
 
 directory:
-  images: /products/images
+  images: /products/images/
 # application.properties
