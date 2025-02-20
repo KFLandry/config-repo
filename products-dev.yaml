@@ -36,8 +36,7 @@ logging:
   level:
     root: info
     web: info
-  file:
-    name: /var/log/cyna-products.log
+  file: /var/log/cyna-products.log
 
 eureka:
   client:
