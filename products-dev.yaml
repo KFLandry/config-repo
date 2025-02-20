@@ -37,13 +37,18 @@ logging:
     root: debug
     web: debug
   file:
-    name: ./target/cyna-products.log
+    name: /logs/cyna-products.log
 
 eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
   instance:
-    hostname: eureka-server
-    prefer-ip-address: false
+    hostname: localhost
+    preferIpAddress: false
 
 directory:
-  images: products/target/images
+  images: /products/images
 # application.properties
