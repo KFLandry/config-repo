@@ -48,3 +48,5 @@ eureka:
   instance:
     hostname: ${spring.application.name}
     preferIpAddress: false
+    instance-id: ${spring.application.name}:${random.value}
+
