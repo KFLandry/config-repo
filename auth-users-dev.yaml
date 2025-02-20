@@ -32,7 +32,7 @@ logging:
     org.springframework.security.web.FilterChainProxy: DEBUG
     org.springframework.web: DEBUG
   file:
-    name: ./target/cyna-auth-users.log
+    name: /logs/cyna-auth-users.log
 
 #jwt
 jwt:
