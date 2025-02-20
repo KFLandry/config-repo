@@ -3,7 +3,7 @@ spring:
     name: auth-users
 
   datasource:
-    url: jdbc:mysql://localhost:3306/cyna_db
+    url: jdbc:mysql://cyna_db:3306/cyna_db
     username: cyna_user
     password: cyna_pwd
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -41,5 +41,5 @@ jwt:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-server
     prefer-ip-address: false
