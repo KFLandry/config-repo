@@ -37,8 +37,7 @@ logging:
     root: info
     web: info
   file:
-    name: cyna-products.log
-    path: /var/log
+    name: /var/log/cyna-products.log
 
 eureka:
   client:
