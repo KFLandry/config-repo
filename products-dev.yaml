@@ -34,8 +34,8 @@ server:
 #Logging
 logging:
   level:
-    root: info
-    web: info
+    root: debug
+    web: debug
   file: /logs/cyna-products.log
 
 eureka:
