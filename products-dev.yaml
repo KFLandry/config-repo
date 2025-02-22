@@ -25,7 +25,7 @@ spring:
       base-path: /api/v1
   web:
     resources:
-      static-locations: file:/products/images
+      static-locations: file:./images
 
 server:
   port: 8082
@@ -49,5 +49,8 @@ eureka:
     preferIpAddress: false
 
 directory:
-  images: /products/images/
+  images: ./images/
+
+static:
+  location: ${server.scheme:http}://${server.address:localhost}:${server.port:8080}/${spring.application.name}
 # application.properties
