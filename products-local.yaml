@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: products
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/cyna_db
+    username: cyna_user
+    password: cyna_pwd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+  docker:
+    compose:
+      file: ./compose.yaml
+  data:
+    rest:
+      base-path: /api/v1
+  web:
+    resources:
+      static-locations: file:./images
+
+server:
+  port: 8082
+  url: ${server.scheme:http}://${server.address:localhost}:${server.port:8080}
+
+#Logging
+logging:
+  level:
+    root: debug
+    web: debug
+  file: /logs/cyna-products.log
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: ${spring.application.name}
+    preferIpAddress: false
+
+directory:
+  images: ./images/
+
+static:
+  location: ${server.scheme:http}://${server.address:localhost}:${server.port:8080}/${spring.application.name}
+# application.properties
