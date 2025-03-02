@@ -20,6 +20,9 @@ spring:
   docker:
     compose:
       file: ./compose.yaml
+  web:
+    resources:
+      static-locations: file:./images
 
 server:
   port: 8081
@@ -52,13 +55,13 @@ eureka:
 
 springdoc:
   api-docs:
-    path: /aggregated-api-docs
+    path: /api-docs
   swagger-ui:
-    path: /swagger-ui-custom.html
+    path: /swagger-ui.html
     operations-sorter: method
 
 static:
-  location: ${server.scheme:http}://${server.address:localhost}:${server.port:8080}/${spring.application.name}
+  location: ${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}
 
 directory:
   images: ./images/

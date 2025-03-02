@@ -61,5 +61,5 @@ springdoc:
   api-docs:
     path: /aggregated-api-docs
   swagger-ui:
-    path: /swagger-ui-custom.html
+    path: /swagger-ui.html
     operations-sorter: method
