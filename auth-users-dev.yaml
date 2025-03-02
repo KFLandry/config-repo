@@ -50,5 +50,15 @@ eureka:
     preferIpAddress: false
     instance-id: ${spring.application.name}:${random.value}
 
+springdoc:
+  api-docs:
+    path: /aggregated-api-docs
+  swagger-ui:
+    path: /swagger-ui-custom.html
+    operations-sorter: method
+
 static:
   location: ${server.scheme:http}://${server.address:localhost}:${server.port:8080}/${spring.application.name}
+
+directory:
+  images: ./images/

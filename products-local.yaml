@@ -48,6 +48,13 @@ eureka:
     hostname: localhost
     preferIpAddress: false
 
+springdoc:
+  api-docs:
+    path: /aggregated-api-docs
+  swagger-ui:
+    path: /swagger-ui-custom.html
+    operations-sorter: method
+
 directory:
   images: ./images/
 

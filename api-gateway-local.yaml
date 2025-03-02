@@ -56,3 +56,10 @@ logging:
   file:
     name: api-gateway.log
     path: /var/log
+
+springdoc:
+  api-docs:
+    path: /aggregated-api-docs
+  swagger-ui:
+    path: /swagger-ui-custom.html
+    operations-sorter: method
