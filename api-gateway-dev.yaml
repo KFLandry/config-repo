@@ -61,3 +61,10 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     operations-sorter: method
+    urls:
+      - name:  gateway-service
+        url: /aggregated-api-docs
+      - name: auth-users
+        url: /auth-users/api-docs
+      - name: products
+        url: /products/api-docs

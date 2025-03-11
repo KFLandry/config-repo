@@ -50,6 +50,7 @@ eureka:
     instance-id: ${spring.application.name}:${random.value}
 logging:
   level:
+    web: debug
     org.springframework.cloud.gateway: DEBUG
     org.springframework.cloud.netflix: DEBUG
 
@@ -58,7 +59,14 @@ logging:
 
 springdoc:
   api-docs:
-    path: /api-docs
+    path: /aggregated-api-docs
   swagger-ui:
     path: /swagger-ui.html
     operations-sorter: method
+    urls:
+      - name:  gateway-service
+        url: /aggregated-api-docs
+      - name: auth-users
+        url: /auth-users/api-docs
+      - name: products
+        url: /products/api-docs
