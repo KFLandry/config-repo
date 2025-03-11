@@ -50,10 +50,10 @@ eureka:
     instance-id: ${spring.application.name}:${random.value}
 logging:
   level:
+    web: debug
     org.springframework.cloud.gateway: DEBUG
-    org.springframework.cloud.netflix: DEBUG
   file:
-    name: /var/log/api-gateway.log
+    name: /var/log/${spring.application.name}.log
 
 springdoc:
   api-docs:
