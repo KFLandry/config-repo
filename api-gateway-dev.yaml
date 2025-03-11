@@ -52,10 +52,8 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     org.springframework.cloud.netflix: DEBUG
-
   file:
-    name: api-gateway.log
-    path: /var/log
+    name: /var/log/api-gateway.log
 
 springdoc:
   api-docs:
