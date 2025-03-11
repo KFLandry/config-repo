@@ -33,7 +33,6 @@ logging:
     web: debug
     org.springframework.security: DEBUG
     org.springframework.security.web.FilterChainProxy: DEBUG
-    org.springframework.web: DEBUG
   file:
     name: /var/log/${spring.application.name}.log
 
