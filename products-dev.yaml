@@ -36,7 +36,8 @@ logging:
   level:
     root: debug
     web: debug
-  file: /logs/cyna-products.log
+  file:
+    name: /var/log/${spring.application.name}.log
 
 eureka:
   client:
