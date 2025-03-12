@@ -3,9 +3,9 @@ spring:
     name: products
 
   datasource:
-    url: jdbc:mysql://cyna_db:3306/cyna_db
-    username: cyna_user
-    password: cyna_pwd
+    url: jdbc:${JAWSDB_URL:mysql://cyna_db:3306/cyna_db}
+    username: ${DB-USERNAME:cyna_user}
+    password: ${DB-PASSWORD:cyna_pwd}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -25,11 +25,11 @@ spring:
       base-path: /api/v1
   web:
     resources:
-      static-locations: file:./images
+      static-locations: file:/home/images/
 
 server:
-  port: 8082
-  url: ${server.scheme:http}://${server.address:localhost}:${server.port:8080}
+  port: ${PORT:8082}
+  url: ${server.scheme:http}://${server.address:localhost}:${server.port:8082}
 
 #Logging
 logging:
@@ -42,11 +42,11 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone:  ${EUREKA-URI:'http://eureka-server:8761/eureka/'}
     register-with-eureka: true
     fetch-registry: true
   instance:
-    hostname: ${spring.application.name}
+    hostname: ${HOSTNAME:${spring.application.name}}
     preferIpAddress: false
 
 springdoc:
@@ -57,8 +57,8 @@ springdoc:
     operations-sorter: method
 
 directory:
-  images: ./images/
+  images: /home/images/
 
 static:
-  location: ${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}
+  location: ${URL-API-GATEWAY:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
 # application.properties
