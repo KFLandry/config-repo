@@ -1,0 +1,17 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: ${EUREKA_URI:http://${spring.application.name}:${PORT}/eureka}
+
+  instance:
+    hostname: ${HOSTNAME:${spring.application.name}}
+    prefer-ip-address: true
+    non-secure-port: ${PORT:8761}
+
+logging:
+  level:
+    root: warn
+    com.netflix: OFF
+    com.discovery: OFF
