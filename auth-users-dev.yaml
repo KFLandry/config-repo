@@ -3,11 +3,11 @@ spring:
     name: auth-users
 
   datasource:
-    url: jdbc:${JAWSDB_URL:'mysql://cyna_db:3306/cyna_db'}
+    url: jdbc:${JAWSDB_URL:mysql://cyna_db:3306/cyna_db}
     username: ${DB-USERNAME:cyna_user}
     password: ${DB-PASSWORD:cyna_pwd}
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+    
   jpa:
     hibernate:
       ddl-auto: create
