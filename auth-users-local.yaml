@@ -2,7 +2,7 @@ spring:
   application:
     name: auth-users
 
-    datasource:
+  datasource:
     url: jdbc:mysql://localhost:3306/cyna_db
     username: cyna_user
     password: cyna_pwd
