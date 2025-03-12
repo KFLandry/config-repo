@@ -1,5 +1,5 @@
 server:
-  port: 8080 
+  port: ${PORT:8080} 
   
 
 spring:
@@ -42,7 +42,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: ${URL-EUREKA-SERVER:http://eureka-server:8761/eureka/}
     register-with-eureka: true
     fetch-registry: true
   instance:
