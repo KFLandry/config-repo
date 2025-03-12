@@ -52,7 +52,6 @@ eureka:
 logging:
   level:
     web: debug
-    org.springframework.cloud.gateway: DEBUG
   file:
     name: /var/log/${spring.application.name}.log
 
