@@ -2,10 +2,10 @@ spring:
   application:
     name: auth-users
 
-  datasource:
-    url: jdbc:${JAWSDB_URL:mysql://ilknl7oozjtmfepd:xjwr5uohzy0p49fk@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/oz93sut68wslp847}
-    username: ${DB-USERNAME:ilknl7oozjtmfepd}
-    password: ${DB-PASSWORD:xjwr5uohzy0p49fk}
+    datasource:
+    url: jdbc:mysql://localhost:3306/cyna_db
+    username: cyna_user
+    password: cyna_pwd
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -17,9 +17,9 @@ spring:
         format_sql: true
     defer-datasource-initialization: true
 
-  # docker:
-  #   compose:
-  #     file: ./compose.yaml
+  docker:
+    compose:
+      file: ./compose.yaml
   web:
     resources:
       static-locations: file:./images
