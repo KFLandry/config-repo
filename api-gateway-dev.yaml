@@ -54,9 +54,8 @@ eureka:
     nonSecurePortEnabled: false
 logging:
   level:
-    web: info
-    eureka: debug
-    # web: debug
+    root: debug
+    web: debug
   file:
     name: /var/log/${spring.application.name}.log
 
