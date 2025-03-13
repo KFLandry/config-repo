@@ -46,7 +46,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    hostname: ${URL-PRODUCTS:${spring.application.name}}
+    hostname: ${HOST-PRODUCTS:${spring.application.name}}
     preferIpAddress: false
 
 springdoc:
