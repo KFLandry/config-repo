@@ -30,9 +30,7 @@ server:
 #Logging
 logging:
   level:
-    web: debug
-    org.springframework.security: DEBUG
-    org.springframework.security.web.FilterChainProxy: DEBUG
+    web: warn
   file:
     name: /var/log/${spring.application.name}.log
 
@@ -64,7 +62,7 @@ springdoc:
     operations-sorter: method
 
 static:
-  location: ${URL-API-GATEWAY:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
+   location: ${URL-API-GATEWAY/${spring.application.name}:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
 
 directory:
   images: /home/images/
