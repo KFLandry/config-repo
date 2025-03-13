@@ -6,7 +6,7 @@ eureka:
       defaultZone: ${EUREKA-URI:http://${spring.application.name}:${PORT:8761}/eureka}
 
   instance:
-    hostname: ${URL-API-GATEWAY:${spring.application.name}}
+    hostname: ${URL-EUREKA:${spring.application.name}}
     prefer-ip-address: true
     non-secure-port: ${PORT:8761}
 
