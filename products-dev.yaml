@@ -34,7 +34,7 @@ server:
 #Logging
 logging:
   level:
-    root: debug
+    root: info
     web: debug
   file:
     name: /var/log/${spring.application.name}.log
