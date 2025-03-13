@@ -7,6 +7,7 @@ eureka:
 
   instance:
     hostname: ${URL-EUREKA:${spring.application.name}}
+    secure-port: ${PORT:${eureka.instance.secure-port}}
     prefer-ip-address: true
     securePortEnabled: true
     nonSecurePortEnabled: false
