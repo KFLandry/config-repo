@@ -49,6 +49,8 @@ eureka:
     hostname: ${HOST-API-GATEWAY:${spring.application.name}}
     preferIpAddress: false
     instance-id: ${spring.application.name}:${random.value}
+    securePortEnabled: true
+    nonSecurePortEnabled: false
 logging:
   level:
     web: debug
