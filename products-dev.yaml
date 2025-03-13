@@ -47,7 +47,8 @@ eureka:
     fetch-registry: true
   instance:
     hostname: ${HOST-PRODUCTS:${spring.application.name}}
-    secure-port: ${PORT:${eureka.instance.secure-port}}
+    # secure-port: ${PORT:${eureka.instance.secure-port}}
+    secure-port: 443
     preferIpAddress: false
     securePortEnabled: true
     nonSecurePortEnabled: false
