@@ -48,15 +48,14 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
     hostname: ${HOST-API-GATEWAY:${spring.application.name}}
-    # secure-port: ${PORT:${eureka.instance.secure-port}}
     secure-port: 443
     preferIpAddress: false
     securePortEnabled: true
     nonSecurePortEnabled: false
 logging:
   level:
-    root: debug
-    web: debug
+    root: warn
+    web: warn
   file:
     name: /var/log/${spring.application.name}.log
 
