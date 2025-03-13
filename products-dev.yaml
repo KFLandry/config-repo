@@ -34,8 +34,8 @@ server:
 #Logging
 logging:
   level:
-    root: info
-    web: debug
+    root: warn
+    web: warn
   file:
     name: /var/log/${spring.application.name}.log
 
@@ -47,7 +47,6 @@ eureka:
     fetch-registry: true
   instance:
     hostname: ${HOST-PRODUCTS:${spring.application.name}}
-    # secure-port: ${PORT:${eureka.instance.secure-port}}
     secure-port: 443
     preferIpAddress: false
     securePortEnabled: true
@@ -64,5 +63,5 @@ directory:
   images: /home/images/
 
 static:
-  location: ${URL-API-GATEWAY:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
+  location: ${URL-API-GATEWAY/${spring.application.name}:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
 # application.properties
