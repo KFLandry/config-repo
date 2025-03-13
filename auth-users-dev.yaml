@@ -51,6 +51,8 @@ eureka:
     hostname: ${HOST-AUTH-USERS:${spring.application.name}}
     preferIpAddress: false
     instance-id: ${spring.application.name}:${random.value}
+    securePortEnabled: true
+    nonSecurePortEnabled: false
 
 springdoc:
   api-docs:
