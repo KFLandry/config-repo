@@ -61,7 +61,7 @@ springdoc:
     operations-sorter: method
 
 static:
-   location: ${URL-API-GATEWAY/${spring.application.name}:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
+   location: ${URL-API-GATEWAY.${spring.application.name}:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
 
 directory:
   images: /home/images/
