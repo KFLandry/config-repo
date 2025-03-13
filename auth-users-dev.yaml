@@ -49,7 +49,6 @@ eureka:
     hostname: ${HOST-AUTH-USERS:${spring.application.name}}
     instance-id: ${spring.application.name}:${random.value}
     secure-port: 443
-    # secure-port: ${PORT:${eureka.instance.secure-port}}
     preferIpAddress: false
     securePortEnabled: true
     nonSecurePortEnabled: false
