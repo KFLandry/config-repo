@@ -63,5 +63,5 @@ directory:
   images: /home/images/
 
 static:
-  location: ${URL-API-GATEWAY/${spring.application.name}:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
+  location: ${URL-API-GATEWAY.${spring.application.name}:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
 # application.properties
