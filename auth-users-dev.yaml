@@ -48,7 +48,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    hostname: ${URL-AUTH-USERS:${spring.application.name}}
+    hostname: ${HOST-AUTH-USERS:${spring.application.name}}
     preferIpAddress: false
     instance-id: ${spring.application.name}:${random.value}
 
