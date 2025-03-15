@@ -48,7 +48,10 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
     hostname: ${HOST-API-GATEWAY:${spring.application.name}}
+    secure-port: 443
     preferIpAddress: false
+    securePortEnabled: true
+    nonSecurePortEnabled: false
 logging:
   level:
     root: warn
