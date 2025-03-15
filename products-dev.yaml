@@ -42,7 +42,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone:  ${EUREKA-URI:'http://eureka-server:8761/eureka/'}
+      defaultZone:  ${EUREKA-URI:http://eureka-server:8761/eureka/}
     register-with-eureka: true
     fetch-registry: true
   instance:
