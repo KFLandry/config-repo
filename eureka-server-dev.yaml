@@ -3,10 +3,10 @@ eureka:
     fetch-registry: false
     register-with-eureka: false
     service-url:
-      defaultZone: ${EUREKA-URI:http://${spring.application.name}:${PORT:8761}/eureka}
+      defaultZone: ${EUREKA-URI:http://localhost:${PORT:8761}/eureka}
 
   instance:
-    hostname: ${URL-EUREKA:localhost}
+    hostname: ${URL-EUREKA:${spring.application.name}}
     prefer-ip-address: true
 
 logging:
