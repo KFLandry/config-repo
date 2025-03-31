@@ -27,7 +27,7 @@ spring:
             - Path=/api/v1/products/**,/api/v1/categories/**,/products/**
 
         - id: subscriptions
-          uri: lb://orders
+          uri: lb://subscriptions
           predicates:
             - Path=/api/v1/subscriptions/**,/subscriptions/**
           filters:
