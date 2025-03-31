@@ -71,4 +71,4 @@ springdoc:
       - name: products
         url: /products/api-docs
       - name: subscriptions
-        url: /subscriptions/pai-docs
+        url: /subscriptions/api-docs
