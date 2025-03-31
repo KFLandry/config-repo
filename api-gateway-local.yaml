@@ -26,10 +26,10 @@ spring:
           predicates:
             - Path=/api/v1/products/**,/api/v1/categories/**,/products/**
 
-        - id: orders
+        - id: subscriptions
           uri: lb://orders
           predicates:
-            - Path=/api/v1/orders/**,/orders/**
+            - Path=/api/v1/subscriptions/**,/subscriptions/**
           filters:
             - name: JwtAuth
 
@@ -70,3 +70,5 @@ springdoc:
         url: /auth-users/api-docs
       - name: products
         url: /products/api-docs
+      - name: subscriptions
+        url: /subscriptions/pai-docs
