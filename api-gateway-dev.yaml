@@ -28,8 +28,6 @@ spring:
           uri: lb://auth-users
           predicates:
             - Path=/api/v1/auth/**
-         filters:
-          - TokenRelay=
 
         - id: user-service
           uri: lb://auth-users
@@ -37,21 +35,18 @@ spring:
             - Path=/api/v1/user/**,/auth-users/**
           filters:
             - name: JwtAuth
-            - TokenRelay=
 
         - id: products
           uri: lb://products
           predicates:
             - Path=/api/v1/products/**,/api/v1/categories/**,/products/**
             
-
         - id: orders
           uri: lb://orders
           predicates:
             - Path=/api/v1/orders/**,/orders/**
           filters:
             - name: JwtAuth
-            - TokenRelay=
 
         - id: sav
           uri: lb://sav
