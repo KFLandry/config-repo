@@ -28,7 +28,7 @@ spring:
           uri: lb://auth-users
           predicates:
             - Path=/api/v1/auth/**
-           filters:
+         filters:
           - TokenRelay=
 
         - id: user-service
