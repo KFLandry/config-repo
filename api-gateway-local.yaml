@@ -20,6 +20,7 @@ spring:
             - Path=/api/v1/user/**,/auth-users/**
           filters:
             - name: JwtAuth
+            - TokenRelay=
 
         - id: products
           uri: lb://products
@@ -32,6 +33,7 @@ spring:
             - Path=/api/v1/subscriptions/**,/subscriptions/**
           filters:
             - name: JwtAuth
+            - TokenRelay=
 
         - id: sav
           uri: lb://sav
