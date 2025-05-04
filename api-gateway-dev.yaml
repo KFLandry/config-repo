@@ -69,3 +69,5 @@ springdoc:
         url: /auth-users/api-docs
       - name: products
         url: /products/api-docs
+      - name: subscriptions
+        url: /subscriptions/api-docs
