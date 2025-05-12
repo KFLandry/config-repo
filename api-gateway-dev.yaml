@@ -18,7 +18,7 @@ spring:
         - id: user-service
           uri: lb://auth-users
           predicates:
-            - Path=/api/v1/user/**,/auth-users/**
+            - Path=/api/v1/user/**,/auth-users/**,/api/v1/address/** 
           filters:
             - name: JwtAuth
 
