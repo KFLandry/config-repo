@@ -24,7 +24,7 @@ spring:
         - id: products
           uri: lb://products
           predicates:
-            - Path=/api/v1/products/**,/api/v1/categories/**,/products/**
+            - Path=/api/v1/products/**,/api/v1/categories/**,/products/**,/carousel/**
 
         - id: subscriptions
           uri: lb://subscriptions
