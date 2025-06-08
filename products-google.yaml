@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: products
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://cyna_db:3306/cyna_db}
+    username: ${DB_USERNAME:cyna_user}
+    password: ${DB_PASSWORD:cyna_pwd}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+  data:
+    rest:
+      base-path: /api/v1
+  web:
+    resources:
+      static-locations: file:${DIRECTORY_IMAGES:/home/images/}
+
+server:
+  port: ${PORT:8082}
+  url: ${server.scheme:http}://${server.address:localhost}:${server.port:8082}
+
+#Logging
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:warn}
+    web: ${LOGGING_LEVEL_WEB:warn}
+  file:
+    name: /var/log/${spring.application.name}.log
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  ${URL_EUREKA:http://eureka-server:8761/eureka/}
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: ${HOST_PRODUCTS:${spring.application.name}}
+    secure-port: 443
+    preferIpAddress: false
+    securePortEnabled: true
+    nonSecurePortEnabled: false
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+directory:
+  images: ${DIRECTORY_IMAGES:/home/images/}
+
+static:
+  location: ${PUBLIC:http://localhost:8080/${spring.application.name}}
+# application.properties

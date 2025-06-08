@@ -42,17 +42,20 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA-URI:http://eureka-server:8761/eureka/}
+      defaultZone: ${URL_EUREKA:http://eureka-server:8761/eureka/}
     register-with-eureka: true
     fetch-registry: true
   instance:
     instance-id: ${spring.application.name}:${random.value}
-    hostname: ${HOST-API-GATEWAY:${spring.application.name}}
+    hostname: ${HOST_API_GATEWAY:${spring.application.name}}
+    secure-port: 443
     preferIpAddress: false
+    securePortEnabled: true
+    nonSecurePortEnabled: false
 logging:
   level:
-    root: warn
-    web: warn
+    root: ${LOGGING_LEVEL_ROOT:warn}
+    web: ${LOGGING_LEVEL_WEB:warn}
   file:
     name: /var/log/${spring.application.name}.log
 

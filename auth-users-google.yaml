@@ -3,26 +3,23 @@ spring:
     name: auth-users
 
   datasource:
-    url: jdbc:${JAWSDB_URL:mysql://cyna_db:3306/cyna_db}
+    url: ${DB_URL:jdbc:mysql://cyna_db:3306/cyna_db}
     username: ${DB-USERNAME:cyna_user}
     password: ${DB-PASSWORD:cyna_pwd}
     driver-class-name: com.mysql.cj.jdbc.Driver
     
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
     show-sql: true
     properties:
       hibernate:
         format_sql: true
     defer-datasource-initialization: true
 
-  docker:
-    compose:
-      file: ./compose.yaml
   web:
     resources:
-      static-locations: file:/home/images/
+      static-locations: file:${DIRECTORY_IMAGES:/home/images/}
 
 server:
   port: ${PORT:8081}
@@ -30,23 +27,24 @@ server:
 #Logging
 logging:
   level:
-    web: warn
+    root: ${LOGGING_LEVEL_ROOT:warn}
+    web: ${LOGGING_LEVEL_WEB:warn}
   file:
     name: /var/log/${spring.application.name}.log
 
 #jwt
 jwt:
-  secret: ${JWT-SECRET:7405b08c15e2003d093c644c5b6a506a8264f8bbe9f10631c22e731b260c415801e0321e14735d174b7a774ac6bbba8e8d8a7b5ecf0022df46121ae3921d095f46f08c1aab6a3062d355e30902368b7ba113a0b8b5ad558edc58db9442f651a25781103d5365a895824e5d7bf1da0e9a60a77f9ee4d9076c4a6a7ade8815c717ba79fb98da2e93c70d78dad4a6df0d6dcdd4eccf48e7eb6b294659e88cc53b435c475c41649cad4e8a52e6d0b9ad5b2b828659d92cebd21599455952e57b0011d3a743862e064a58b1b027ea4ab98cce0fcacf37c355629c81be5561e8566ce46a8be1f6363b9beb08853b7e449ff39cd5ba9deca42c40465b5049c0ff900239}
-  expiration: ${JWT-EXP:3600000}
+  secret: ${JWT_SECRET:7405b08c15e2003d093c644c5b6a506a8264f8bbe9f10631c22e731b260c415801e0321e14735d174b7a774ac6bbba8e8d8a7b5ecf0022df46121ae3921d095f46f08c1aab6a3062d355e30902368b7ba113a0b8b5ad558edc58db9442f651a25781103d5365a895824e5d7bf1da0e9a60a77f9ee4d9076c4a6a7ade8815c717ba79fb98da2e93c70d78dad4a6df0d6dcdd4eccf48e7eb6b294659e88cc53b435c475c41649cad4e8a52e6d0b9ad5b2b828659d92cebd21599455952e57b0011d3a743862e064a58b1b027ea4ab98cce0fcacf37c355629c81be5561e8566ce46a8be1f6363b9beb08853b7e449ff39cd5ba9deca42c40465b5049c0ff900239}
+  expiration: ${JWT_EXP:3600000}
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA-URI:http://eureka-server:8761/eureka/}
+      defaultZone: ${URL_EUREKA:http://eureka-server:8761/eureka/}
     register-with-eureka: true
     fetch-registry: true
   instance:
-    hostname: ${HOST-AUTH-USERS:${spring.application.name}}
+    hostname: ${HOST_AUTH_USERS:${spring.application.name}}
     instance-id: ${spring.application.name}:${random.value}
     secure-port: 443
     preferIpAddress: false
@@ -64,7 +62,7 @@ static:
    location: ${PUBLIC:${server.scheme:http}://${server.address:localhost}:8080/${spring.application.name}}
 
 directory:
-  images: /home/images/
+  images: ${DIRECTORY_IMAGES:/home/images/}
 
 endpoints:
   validate_email: ${FRONT_END_URL:http://localhost:8080/}api/v1/auth/validate-email
@@ -77,7 +75,7 @@ mailerSend:
   super_admin: ${SUPER_ADMIN:wilfrieddev0@gmail.com}
   token: ${API_TOKEN}
   templates:
-    generic_template: "3z0vklo86e147qrx"
-    generic_template_with_button: "jpzkmgq87o2g059v"
-    email_verified: "jy7zpl998erl5vx6"
+    generic_template: ${TEMPLATE_GENERIC:3z0vklo86e147qrx}
+    generic_template_with_button: ${TEMPLATE_GENERIC_WITH_BUTTON:jpzkmgq87o2g059v}
+    email_verified: ${TEMPLATE_EMAIL_VERIFIED:jy7zpl998erl5vx6}
 
