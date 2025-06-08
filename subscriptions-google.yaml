@@ -28,6 +28,9 @@ eureka:
     hostname: ${HOST_SUBSCRIPTIONS:${spring.application.name}}
     instance-id: ${spring.application.name}:${random.value}
     preferIpAddress: false
+    secure-port: 443
+    securePortEnabled: true
+    nonSecurePortEnabled: false
 
 logging:
   level:
