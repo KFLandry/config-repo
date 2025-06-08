@@ -59,7 +59,7 @@ springdoc:
     operations-sorter: method
 
 static:
-   location: ${PUBLIC:${server.scheme:http}://${server.address:localhost}:8080/}${spring.application.name}
+   location: ${PUBLIC:${server.scheme:http}://${server.address:localhost}:8080}/${spring.application.name}
 
 directory:
   images: ${DIRECTORY_IMAGES:/home/images/}
