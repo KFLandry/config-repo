@@ -27,10 +27,10 @@ eureka:
   instance:
     hostname: ${HOST_SUBSCRIPTIONS:${spring.application.name}}
     instance-id: ${spring.application.name}:${random.value}
+    secure-port: 443
     preferIpAddress: false
-    securePortEnabled: false
-    nonSecurePortEnabled: true
-    nonSecurePort: ${PORT:8083}
+    securePortEnabled: true
+    nonSecurePortEnabled: false
 
 
 logging:
