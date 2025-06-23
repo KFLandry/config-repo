@@ -27,7 +27,6 @@ eureka:
   instance:
     hostname: ${HOST_SUBSCRIPTIONS:${spring.application.name}}
     instance-id: ${spring.application.name}:${random.value}
-    secure-port: ${PORT:8083}
     preferIpAddress: false
     securePortEnabled: true
     nonSecurePortEnabled: false
